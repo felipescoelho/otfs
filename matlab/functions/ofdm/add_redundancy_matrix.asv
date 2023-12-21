@@ -1,0 +1,16 @@
+function [Gamma] = add_redundancy_matrx(dftLength, cpLength, csLength)
+% ADD_REDUNDANCY_MATRIX     Generates matrix to add redundancy in the form
+%                           of cyclic prefix and cyclic suffix.
+%   [Gamma] = ADD_REDUNDANCY_MATRIX(dftLength, cpLength, csLength)
+%
+%   - Parameters:
+%       . dftLength : Length of the DFT (number of subcarriers).
+%       . cpLength : Number of samples in cyclic prefix.
+%       . csLength : Number of samples in cyclic suffix.
+%   - Returns:
+%       . Gamma : Matrix that adds redundancy to each block in a frame.
+%
+
+Gamma = [zeros(cpLength, dftLength-cpLength), eye(cpLength); ...
+    eye(dftLength); eye(csLength), zeros(csLength, dftLength-csLength)];
+end

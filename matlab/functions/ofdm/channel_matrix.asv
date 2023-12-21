@@ -1,0 +1,7 @@
+function [outputArg1,outputArg2] = channel_matrix(inputArg1,inputArg2)
+%CHANNEL_MATRIX     Generates the channel matrix for the OFDM syste
+%   Detailed explanation goes here
+outputArg1 = inputArg1;
+outputArg2 = inputArg2;
+end
+
